@@ -21,7 +21,9 @@ public class Bishop extends PieceImpl implements Piece {
 	@Override
 	public boolean isValidMove(Position oldPosition, Position newPosition,
 			Piece isTaken, Board board) {
-		return true;
+		Piece p = board.pieceAt(oldPosition);
+		Piece t = board.pieceAt(newPosition);
+		return this.equals(p) && (t == isTaken || (isTaken != null && isTaken.equals(t))) && (board.clearDiaganolExcept(oldPosition, newPosition, p, t));
 	}
 
 	@Override

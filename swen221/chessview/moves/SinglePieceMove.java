@@ -86,7 +86,7 @@ public class SinglePieceMove implements MultiPieceMove {
 		} else if(piece instanceof Pawn) {
 			// Store the double-step information required to implement En
 			// Passant.
-			int deltaRow = Math.abs(newPosition.row() - newPosition.row());
+			int deltaRow = Math.abs(oldPosition.row() - newPosition.row());
 			Pawn p = (Pawn) b.pieceAt(newPosition);
 			p.setDoubleStep(deltaRow == 2);
 		}

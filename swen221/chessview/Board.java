@@ -245,6 +245,7 @@ public class Board {
 				if (p instanceof King && p.isWhite() == isWhite) {
 					// found him.
 					kingPos = pos;
+					king = (King)p;
 					// The following will break out of the entire loop, not
 					// just the innermost loop. This isn't exactly great
 					// style, but it is pretty convenient here.
@@ -264,7 +265,7 @@ public class Board {
 				if (p != null && p.isWhite() != isWhite
 						&& p.isValidMove(pos, kingPos, king, this)) {
 					// p can take opposition king, so we're in check.
-					return false;
+					return true;
 				}
 			}
 		}

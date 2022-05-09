@@ -41,6 +41,7 @@ public class Check implements Move {
 			// Ok, underlying move is valid; now, we need to check that it
 			// actually corresponds to putting the opposition's king into check.
 
+
 			// First, copy board and apply underlying move.
 			board = new Board(board);
 			board.apply(move);
